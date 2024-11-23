@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean class="com.springcore.autowirebytype.Address" name="address">
+        <property name="street" value="Vijay Nagar"/>
+        <property name="city" value="Indore"/>
+    </bean>
+
+    <bean class="com.springcore.autowirebytype.Address" name="address1">
+        <property name="street" value="xyz"/>
+        <property name="city" value="Jaipur"/>
+    </bean>
+
+    <bean class="com.springcore.autowirebytype.Address" name="address2">
+        <property name="street" value="abc"/>
+        <property name="city" value="Bhopal"/>
+    </bean>
+
+    <!--ref[means Employe class have  ] name and bean name must be same in byName-->
+<!--    <bean class="com.springcore.autowirebytype.Employe" id="employe" autowire="byName">-->
+<!--        <property name="address" ref="address"/>-->
+<!--    </bean>-->
+
+<!-- in this name  not same it will check type of object and inject it  -->
+    <bean class="com.springcore.autowirebytype.Employe" id="employe1" autowire="byType">
+        <property name="address" ref="address1" />
+    </bean>
+
+<!--    <bean class="com.springcore.autowirebytype.Employe" id="employe2" autowire="constructor" >-->
+<!--        <constructor-arg ref="address2"> </constructor-arg>-->
+<!--    </bean>-->
+</beans>

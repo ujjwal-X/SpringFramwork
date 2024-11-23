@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    life bean cycle using XML-->
+<!--    <bean class="com.spring.lifecycle.Student" id="student" init-method="init" destroy-method="destroy">-->
+<!--        <constructor-arg index="0" value="Ramesh"/>-->
+<!--        <constructor-arg index="1" value="100"/>-->
+<!--    </bean>-->
+<!--    <bean class="com.spring.lifecycle.Pepsi" id="pepsi">-->
+<!--        <property name="price" value="40"/>-->
+<!--    </bean>-->
+    <context:annotation-config/>
+
+    <bean class="com.spring.lifecycle.Example" id="example">
+
+    <property name="subject" value="Spring"/>
+    </bean>
+</beans>

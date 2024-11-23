@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    Injecting Primitive Values-->
+    <bean class="org.primitive.Student" id="student1">
+        <property name="studentId" value="22344"/>
+        <property name="studentName" value="Ujjwal Shrivastava"/>
+        <property name="studentAddress" value="Indore"/>
+
+
+    </bean>
+<!--    P Schema Values-->
+    <bean class="org.primitive.Student" id="student2" p:studentAddress="Indore" p:studentId="2000" p:studentName="Shubham"/>
+
+<!--    Making bean of collections-->
+    <bean id="emp1" class="org.collections.Employee" >
+        <property name="name" value="Radhe" />
+        <property name="numbers" >
+            <list>
+                <value>78983568699</value>
+                <value>78983568629</value>
+                <value>151283568699</value>
+            </list>
+        </property>
+        <property name="adresses">
+            <set>
+                <value>Indore</value>
+                <value>Dewas</value>
+                <value>Gwalior</value>
+            </set>
+        </property>
+        <property name="courses">
+            <map>
+                <entry key="Java" value="6"/>
+                <entry key="SQL" value="6"/>
+                <entry key="Java" value="6"/>
+            </map>
+        </property>
+    </bean>
+
+
+<!--    Making bean of reference injecting-->
+    <bean id="bref" class="org.references.B">
+        <property name="y" value="90"/>
+    </bean>
+    <bean class="org.references.A" id="aref">
+        <property name="x" value="12"/>
+        <property name="b" ref="bref"/>
+    </bean>
+
+
+
+<!--    Constructor injection-->
+<bean id="person" class="org.constructorinjector.Person" >
+<constructor-arg value="Java"/>
+    <constructor-arg value="6" type="int"/>
+</bean>
+</beans>
+
+
+

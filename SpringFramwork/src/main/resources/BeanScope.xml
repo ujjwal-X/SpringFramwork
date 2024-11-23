@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="beanscope.Product" name="product">
+        <property name="productId" value="1"/>
+        <property name="productName" value="Lenovo Laptop"/>
+    </bean>
+
+    <bean class="beanscope.Product" name="product1">
+        <property name="productId" value="2"/>
+        <property name="productName" value="HP Laptop"/>
+    </bean>
+
+
+    <bean class="beanscope.Order" id="order" scope="prototype">
+        <property name="status" value="Completed"/>
+        <property name="product" ref="product"/>
+    </bean>
+
+
+
+</beans>

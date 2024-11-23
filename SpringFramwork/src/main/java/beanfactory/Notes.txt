@@ -1,0 +1,9 @@
+                                BeanFactory                                                              ApplicationContext
+Fundamental container providing basic functionality for managing beans.  |    Advanced container extending BeanFactory with additional features.
+Suitable for building standalone applications.                           |    Suitable for building web applications, integrating with AOP modules, ORM, and distributed applications.
+Supports only Singleton and Prototype bean scopes.                       |    Supports all types of bean scopes, including Singleton, Prototype, Request, Session, etc.
+Does not support annotations; requires configuration in XML files.       |    Supports annotation-based configuration for bean autowiring.
+Does not support event Handling.                                         |    Supports event handling via the ApplicationEvent class and ApplicationListener interface.
+Creates bean objects on demand using lazy initialization.                |    Loads all beans and creates objects at startup using eager initialization.
+
+
